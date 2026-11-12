@@ -19,9 +19,9 @@
 <label>Course / Program</label><select id="course" required></select>
 <div class="row"><div><label>Year level</label><select id="year" required><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option></select></div><div><label>Section</label><input id="sec" required maxlength="10" placeholder="A"></div></div>
 <label>Password</label><div class="pw"><input id="p1" type="password" required autocomplete="new-password"><button type="button" class="eye">👁</button></div>
-<div class="hint">8+ characters with uppercase, lowercase, number and symbol.</div>
+<ul class="chk" id="chk"></ul>
 <label>Confirm password</label><div class="pw"><input id="p2" type="password" required autocomplete="new-password"><button type="button" class="eye">👁</button></div>
-<button class="btn">Create account</button><div class="msg" id="sMsg"></div><p><a class="lnk" data-go="login">Back to sign in</a></p></form>
+<ul class="chk" id="chk2"></ul><button class="btn">Create account</button><div class="msg" id="sMsg"></div><p><a class="lnk" data-go="login">Back to sign in</a></p></form>
 <form id="forgot" class="card hide"><h2>Reset password</h2><label>Email</label><input id="fEmail" type="email" required>
 <button class="btn">Send reset link</button><div class="msg" id="fMsg"></div><p><a class="lnk" data-go="login">Back to sign in</a></p></form>
 </div></div><script type="module" src="auth.js"></script></body></html>
