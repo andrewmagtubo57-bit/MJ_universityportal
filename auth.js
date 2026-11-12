@@ -25,3 +25,11 @@ $('#signup').onsubmit=async e=>{e.preventDefault();
   await setDoc(doc(db,'users',u.uid),{role:'student',...id,birthday:v('bd'),gender:v('gn'),nationality:v('nat'),address:v('adr'),username:v('un').toLowerCase(),email:u.email,mobile:v('mobile'),guardian:v('gd'),guardianMobile:v('gm'),college:v('college'),ay:AYNOW,sem:SEMNOW,status:'Enrolled',createdAt:serverTimestamp()});
   await setDoc(doc(db,'directory',u.uid),{...id,photoURL:''});
   location='student.html'}catch(x){say('sMsg',x.code==='auth/email-already-in-use'?'Email already registered.':'Registration failed: '+x.code)}};
+
+// live password checklist
+const RULES=[['At least 8 characters',v=>v.length>=8],['One uppercase letter (A-Z)',v=>/[A-Z]/.test(v)],['One lowercase letter (a-z)',v=>/[a-z]/.test(v)],['One number (0-9)',v=>/\d/.test(v)],['One symbol (e.g. @ # $ ! %)',v=>/[^\w\s]/.test(v)]];
+const li=(ok,t)=>`<li class="${ok?'ok':''}">${ok?'✔':'○'} ${t}</li>`;
+const draw=()=>{const a=$('#p1').value,b=$('#p2').value;
+ $('#chk').innerHTML=RULES.map(([t,f])=>li(f(a),t)).join('');
+ $('#chk2').innerHTML=li(b.length>0&&a===b,'Passwords match')};
+$('#p1').oninput=draw;$('#p2').oninput=draw;draw();
