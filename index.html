@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EduPortal – Sign in</title><link rel="stylesheet" href="portal.css"></head>
+<body><div class="auth"><div style="width:100%;max-width:540px">
+<div class="brand" style="margin-bottom:16px"><span class="logo">🎓</span>EduPortal <span style="color:var(--mut);font-weight:400;font-size:14px">Student &amp; Faculty Portal</span></div>
+<form id="login" class="card"><h2>Sign in</h2>
+<label>Email</label><input id="lEmail" type="email" required autocomplete="email">
+<label>Password</label><div class="pw"><input id="lPass" type="password" required autocomplete="current-password"><button type="button" class="eye">👁</button></div>
+<button class="btn">Sign in</button><div class="msg" id="lMsg"></div>
+<p><a class="lnk" data-go="forgot">Forgot password?</a> · <a class="lnk" data-go="signup">New student? Create account</a></p></form>
+<form id="signup" class="card hide"><h2>Student registration</h2>
+<div class="row"><div><label>First name</label><input id="fn" required></div><div><label>Middle name</label><input id="mn" required></div></div>
+<div class="row"><div><label>Last name</label><input id="ln" required></div><div><label>Birthday</label><input id="bd" type="date" required></div></div>
+<div class="row"><div><label>Gender</label><select id="gn"><option>Male</option><option>Female</option><option>Prefer not to say</option></select></div><div><label>Nationality</label><input id="nat" required value="Filipino"></div></div>
+<label>Address</label><input id="adr" required>
+<div class="row"><div><label>Student ID</label><input id="sid" required maxlength="10" pattern="\d{4}-\d{4,5}[A-Za-z]?" title="Example: 2024-0188E" placeholder="2024-0188E"></div><div><label>Username</label><input id="un" required pattern="[A-Za-z0-9_]{4,20}" title="4-20 letters, numbers or _"></div></div>
+<label>Email</label><input id="email" type="email" required>
+<label>Mobile number (11 digits)</label><input id="mobile" required maxlength="11" minlength="11" inputmode="numeric" placeholder="09123456789">
+<div class="row"><div><label>Guardian name</label><input id="gd" required></div><div><label>Guardian mobile (11 digits)</label><input id="gm" required maxlength="11" minlength="11" inputmode="numeric" placeholder="09123456789"></div></div>
+<label>College</label><select id="college" required></select>
+<label>Course / Program</label><select id="course" required></select>
+<div class="row"><div><label>Year level</label><select id="year" required><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option></select></div><div><label>Section</label><input id="sec" required maxlength="10" placeholder="A"></div></div>
+<label>Password</label><div class="pw"><input id="p1" type="password" required autocomplete="new-password"><button type="button" class="eye">👁</button></div>
+<div class="hint">8+ characters with uppercase, lowercase, number and symbol.</div>
+<label>Confirm password</label><div class="pw"><input id="p2" type="password" required autocomplete="new-password"><button type="button" class="eye">👁</button></div>
+<button class="btn">Create account</button><div class="msg" id="sMsg"></div><p><a class="lnk" data-go="login">Back to sign in</a></p></form>
+<form id="forgot" class="card hide"><h2>Reset password</h2><label>Email</label><input id="fEmail" type="email" required>
+<button class="btn">Send reset link</button><div class="msg" id="fMsg"></div><p><a class="lnk" data-go="login">Back to sign in</a></p></form>
+</div></div><script type="module" src="auth.js"></script></body></html>
